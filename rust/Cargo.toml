@@ -1,0 +1,11 @@
+[package]
+name = "blink"
+version = "0.1.0"
+authors = ["Dylan McKay <me@dylanmckay.io>"]
+edition = '2018'
+
+[dependencies]
+ruduino = "0.2"
+
+[profile.dev]
+panic = "abort"
