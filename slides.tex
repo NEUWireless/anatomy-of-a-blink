@@ -195,7 +195,7 @@ main(void)
     return 0;
 }
         \end{minted}
-        \caption{\href{https://commons.wikimedia.org/wiki/File:Pinout_of_ARDUINO_Board_and_ATMega328PU.svg}{Arduino Uno Digital Pins, CC BY-SA}}
+        \caption{\texttt{blink.c}}
     \end{figure}
 \end{frame}
 
@@ -306,7 +306,7 @@ $ avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 \
         \[
             16*10^6\text{cycles} \approx 256\text{cycles} \times 256\text{cycles} \times 244\text{cycles}
         \]
-    \item Overflow two registers ($255 \rightarrow 0$), count down from $245$ in another
+    \item Overflow two registers ($255 \rightarrow 0$), count down from $244$ in another
     \end{itemize}
 \end{frame}
 
