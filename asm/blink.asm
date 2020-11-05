@@ -14,18 +14,18 @@ RESET:
 Loop:
 
     ldi R19, 0xF4
-aloop:
+delay:
     inc R17
     cpi R17, 0x00
-    brne aloop
+    brne delay
 
     inc R18
     cpi R18, 0x00
-    brne aloop
+    brne delay
 
     inc R19
     cpi R19, 0x00
-    brne aloop
+    brne delay
 
     eor R16, R20
     out PORTB, R16
