@@ -13,7 +13,7 @@ RESET:
     ldi R20, 0x20
 Loop:
 
-    ldi R19, 0xE8
+    ldi R19, 0xF4
 aloop:
     inc R17
     cpi R17, 0x00
