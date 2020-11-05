@@ -369,7 +369,7 @@ delay:
     \frametitle{Systems Software: \emph{Assembler}}
     \vfill
     \begin{itemize}
-        \item Tranform Assembly into machine code
+        \item Transform Assembly into machine code
             \begin{center}
                 Assembly $\xrightarrow{assembler}$ Machine Code
             \end{center}
@@ -522,8 +522,10 @@ panic = "abort"
         ]{bash}
 # Rust -> ELF
 $ cargo build -Z build-std=core --target avr-atmega328p.json
+# ELF -> HEX
+$ avr-objcopy -O ihex -R .eeprom blink blink.hex
         \end{minted}
-        \caption{AVR Assembly $\xrightarrow{\texttt{avr-\{as,ld,objcopy\}}}$ Intel HEX}
+        \caption{Rust $\xrightarrow{\texttt{cargo,avr-objcopy}}$ Intel HEX}
     \end{figure}
     \begin{figure}
         \begin{minted}[
@@ -535,9 +537,9 @@ $ cargo build -Z build-std=core --target avr-atmega328p.json
         ]{bash}
 # ELF -> Arduino
 $ avrdude -D -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 \
-          -U flash:w:$(BIN):e
+          -U flash:w:blink.elf:e
         \end{minted}
-        \caption{ELF $\xrightarrow{\texttt{avrdude}}$ Arduino}
+        \caption{Intel HEX $\xrightarrow{\texttt{avrdude}}$ Arduino}
     \end{figure}
 \end{frame}
 
